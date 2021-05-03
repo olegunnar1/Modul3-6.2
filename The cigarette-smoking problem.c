@@ -16,3 +16,13 @@
       V( lock );
       P( agent );  //  Agent sleeps
      }  // end forever loop
+// Code for the smokers//
+    do forever {
+       P( smoker_tobacco );  // Sleep right away
+       P( lock );
+       // Pick up match
+       // Pick up paper
+       V( agent );
+       V( lock );
+       // Smoke (but don't inhale).
+ }
