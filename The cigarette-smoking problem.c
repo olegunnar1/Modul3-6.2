@@ -2,27 +2,27 @@
    P( lock );
       randNum = rand( 1, 3 ); // Pick a random number from 1-3
       if ( randNum == 1 ) {
-         // Put tobacco on table
-         // Put paper on table
+         // Legg tobak opp på  bordet
+         // Legg papir opp på bordet
          V( smoker_match );  // Wake up smoker with match
       } else if ( randNum == 2 ) {
-         // Put tobacco on table
-        // Put match on table
-        V( smoker_paper );  // Wake up smoker with paper
+         // Legg tobak opp på  bordet
+        // Legg fyrstikk opp på bordet
+        V( smoker_paper );  // Vekk røykeren som har papir
       } else {
-        // Put match on table
-        // Put paper on table
-        V( smoker_tobacco ); } // Wake up smoker with tobacco
+        // Legg fyrstikk opp på bordet
+        // Legg papir opp på bordet
+        V( smoker_tobacco ); } // Vekk røykeren med tobakk
       V( lock );
-      P( agent );  //  Agent sleeps
-     }  // end forever loop
-// Code for the smokers//
+      P( agent );  //  Agent sover
+     }  // slutt loop
+// Kode for de tre røykerene 
     do forever {
-       P( smoker_tobacco );  // Sleep right away
+       P( smoker_tobacco );  // Sov
        P( lock );
-       // Pick up match
-       // Pick up paper
+       // Ta opp fyrstikk
+       // Ta opp papir
        V( agent );
        V( lock );
-       // Smoke (but don't inhale).
+       // Røyk
  }
